@@ -4,11 +4,16 @@ const User = require('../models/user');
 const middleware = require('../utils/middleware');
 
 companyRouter.get('/', async (request, response) => {
-  const companies = await Company.find({}).populate('usersContactes', {
-    username: 1,
-    email: 1,
-  })
+  const companies = await Company.find({}).populate('usersContact')
+  console.log(companies)
   response.json(companies);
+})
+
+companyRouter.get('/:id', async (request, response) => {
+  const id = request.params.id;
+  console.log(id)
+  const company = await Company.findById(id).populate('usersContact')
+  response.json(company);
 })
 
 companyRouter.post('/', middleware.userExtractor, async (request, response) => {
