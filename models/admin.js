@@ -21,4 +21,4 @@ adminSchema.set('toJSON', {
 
 adminSchema.plugin(uniqueValidator)
 
-module.exports = model('Admin', adminSchema);
+module.exports = mongoose.model('Admin', adminSchema);

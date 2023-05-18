@@ -15,10 +15,10 @@ const userSchema = new mongoose.Schema({
   company: String,
   companySimpleText: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Company',
-    required: true
+    ref: 'Company'
   },
-  roleCategory: String
+  roleCategory: String,
+  imgUrl: String
 })
 
 userSchema.set('toJSON', {
@@ -29,6 +29,6 @@ userSchema.set('toJSON', {
   }
 })
 
-blogSchema.plugin(uniqueValidator)
+userSchema.plugin(uniqueValidator)
 
 module.exports = mongoose.model('User', userSchema)
