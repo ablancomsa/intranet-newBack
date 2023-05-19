@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
     ref: 'Company'
   },
   roleCategory: String,
-  imgUrl: String
+  imgUrl: String,
+  isContact: Boolean,
 })
 
 userSchema.set('toJSON', {
