@@ -8,9 +8,10 @@ const sendContact = async (userData) => {
   });
   console.log(header)
   
-  browser = await puppeteer.launch({
+  const browser = await puppeteer.launch({
     headless: false,
     ignoreHTTPSErrors: true,
+    args: ['--disable-features=IsolateOrigins']
     
   });
   const page = await browser.newPage();
