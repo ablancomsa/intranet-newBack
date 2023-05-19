@@ -49,7 +49,7 @@ userRouter.post('/', middleware.userExtractor, async (request, response) => {
     company: person.company,
     companySimpleText: company._id,
     roleCategory: "x",
-    imgUrl: person.imgUrl || "x"
+    imgUrl: person.imgUrl || "../../../assets/user.png"
   })
   
   
